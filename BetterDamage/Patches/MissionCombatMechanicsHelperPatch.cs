@@ -18,6 +18,12 @@ namespace BetterDamage.Patches {
                 if (attackerWeapon == null)
                     return;
 
+                if (BetterDamage.Settings.WepClassHelper) {
+                    if (attackInformation.AttackerAgent.IsPlayerControlled) {
+                        NotifyHelper.ChatMessage("Weapon class is " + attackerWeapon.WeaponClass, MsgType.Notify);
+                    }
+                }
+
                 switch (attackerWeapon.WeaponClass) {
                     case WeaponClass.Undefined:
                         inflictedDamage = (int)(inflictedDamage * BetterDamage.Settings.UndefinedAdjustment);

@@ -119,7 +119,9 @@ namespace BetterDamage.Settings {
         [SettingPropertyFloatingInteger("{=BC_5th0a2}Num Classes", 0f, 5f, "0.0 %", Order = 0, RequireRestart = false, HintText = "{=BC_C7twl6}Adjust weapon damage")]
         public float NumClassesAdjustment { get; set; } = 1f;
 
-
+        [SettingPropertyGroup("Misc")]
+        [SettingPropertyBool("Weapon class helper", Order = 1, RequireRestart = false, HintText = "Enable this to display the weapon class the player is currently using on attack, mainly for debug purposes.")]
+        public bool WepClassHelper { get; set; } = false;
 
         public override string Id { get { return base.GetType().Assembly.GetName().Name; } }
         public override string DisplayName { get { return base.GetType().Assembly.GetName().Name; } }
