@@ -20,7 +20,7 @@ namespace BetterDamage.Patches {
 
                 if (BetterDamage.Settings.WepClassHelper) {
                     if (attackInformation.AttackerAgent.IsPlayerControlled) {
-                        NotifyHelper.ChatMessage("Weapon class is " + attackerWeapon.WeaponClass, MsgType.Notify);
+                        NotifyHelper.WriteMessage("Weapon class is " + attackerWeapon.WeaponClass, MsgType.Notify);
                     }
                 }
 
@@ -111,7 +111,7 @@ namespace BetterDamage.Patches {
                         break;
                 }
             } catch (Exception e) {
-                NotifyHelper.ReportError(BetterDamage.ModName, "MissionCombatMechanicsHelper.ComputeBlowDamage threw exception: " + e);
+                NotifyHelper.WriteError(BetterDamage.ModName, "MissionCombatMechanicsHelper.ComputeBlowDamage threw exception: " + e);
             }
         }
     }
